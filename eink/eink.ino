@@ -1,13 +1,25 @@
 #include <SPI.h>
 #include "img_file.h"
 
-#define CS_PIN 7
-#define DI_PIN 8    // Data/Instruction pin
-#define BUSY_PIN 9
-#define RST_PIN 10
-#define MOSI_PIN 11
-#define MISO_PIN 12
-#define CLK_PIN 13
+#define CS_PIN    6
+#define DI_PIN    7    // Data/Instruction pin
+#define BUSY_PIN  8
+#define RST_PIN   9
+
+/* SPI pins
+ *  Arduino Uno
+ *    - MOSI: 11
+ *    - MISO: 12
+ *    - SCK : 13
+ *    - SS  : 10
+ *  Arduino Mega
+ *    - MOSI: 51
+ *    - MISO: 50
+ *    - SCK ; 52
+ *    - SS  ; 53
+ *  Due
+ *    - ICSP port only
+ */
 
 const unsigned char init_data[] = {
 0x22,  0x11, 0x10, 0x00, 0x10, 0x00, 0x00, 0x11, 0x88, 0x80, 0x80, 0x80, 0x00, 0x00, 0x6A, 0x9B,
