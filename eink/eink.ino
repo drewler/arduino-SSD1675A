@@ -199,6 +199,7 @@ void dis_img(unsigned char num) {
   for(col = 0; col < 296; col++){
     for(row = 0; row < 16; row++){
       SPI4W_WRITEDATA(img_red[pixel_count]);
+      pixel_count++;
     }
   }
 
